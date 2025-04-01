@@ -1,5 +1,5 @@
-import 'package:animated_analog_clock/animated_analog_clock.dart';
 import 'package:flutter/material.dart';
+import 'package:one_clock/one_clock.dart';
 
 class WatchPage extends StatelessWidget {
   const WatchPage({super.key});
@@ -7,31 +7,27 @@ class WatchPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.transparent,
       body: SizedBox(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
-        child: AnimatedAnalogClock(
-          dialType: DialType.none,
-          size: MediaQuery.of(context).size.height,
-          location: 'Asia/Jakarta',
-          // Gradient Background if you want
-          // backgroundGradient: RadialGradient(colors: []),
-          // Set a network image as the background
-          // backgroundImage: NetworkImage(
-          // 'url',
-          // ),
-          // Alternatively, set an asset image as the background
-          // backgroundImage: AssetImage(
-          //   'path/to/your/asset/image.png',
-          // ),
-          backgroundColor: Color(0xff1E1E26),
-          hourHandColor: Colors.lightBlueAccent,
-          minuteHandColor: Colors.lightBlueAccent,
-          secondHandColor: Colors.amber,
-          centerDotColor: Colors.amber,
-          hourDashColor: Colors.lightBlue,
-          minuteDashColor: Colors.blueAccent,
+        child: AnalogClock(
+          decoration: BoxDecoration(
+            border: Border.all(width: 2.0, color: Colors.black),
+            color: Colors.transparent,
+            shape: BoxShape.circle,
+          ),
+          width: 150.0,
+          isLive: true,
+          hourHandColor: Colors.black,
+          minuteHandColor: Colors.black,
+          showSecondHand: true,
+          numberColor: Colors.black87,
+          showNumbers: true,
+          showAllNumbers: true,
+          textScaleFactor: 1.4,
+          showTicks: true,
+          showDigitalClock: true,
+          datetime: DateTime.now(),
         ),
       ),
     );
