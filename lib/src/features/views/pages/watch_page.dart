@@ -11,6 +11,8 @@ class WatchPage extends StatelessWidget {
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         child: AnalogClock(
+          secondHandColor: Colors.black,
+          tickColor: Colors.black,
           decoration: BoxDecoration(
             border: Border.all(width: 2.0, color: Colors.black),
             color: Colors.transparent,
@@ -24,7 +26,7 @@ class WatchPage extends StatelessWidget {
           numberColor: Colors.black87,
           showNumbers: true,
           showAllNumbers: true,
-          textScaleFactor: 1.4,
+          textScaleFactor: 1.0,
           showTicks: true,
           showDigitalClock: true,
           datetime: DateTime.now(),
