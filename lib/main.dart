@@ -1,4 +1,4 @@
-import 'package:f_smartwatch/src/features/views/home/home__page.dart';
+import 'package:f_smartwatch/src/features/views/home/home_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {

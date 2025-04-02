@@ -7,9 +7,11 @@ class WatchPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SizedBox(
+      backgroundColor: Colors.black,
+      body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
+        decoration: BoxDecoration(color: Colors.amber, shape: BoxShape.circle),
         child: AnalogClock(
           secondHandColor: Colors.black,
           tickColor: Colors.black,
