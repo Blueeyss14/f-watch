@@ -1,4 +1,4 @@
-import 'package:f_smartwatch/src/features/views/pages/gps_page.dart';
+import 'package:f_smartwatch/src/features/views/pages/chat_page.dart';
 import 'package:f_smartwatch/src/features/views/pages/watch_menu.dart';
 import 'package:f_smartwatch/src/features/views/pages/watch_page.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +10,7 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-final pages = [const WatchPage(), const WatchMenu(), GpsPage()];
+final pages = const [WatchPage(), WatchMenu(), ChatPage()];
 
 class _HomePageState extends State<HomePage> {
   @override
