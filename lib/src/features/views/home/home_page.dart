@@ -10,7 +10,7 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-final pages = const [WatchPage(), ChatPage(), WatchMenu()];
+final pages = const [WatchPage(), WatchMenu(), ChatPage()];
 
 class _HomePageState extends State<HomePage> {
   @override

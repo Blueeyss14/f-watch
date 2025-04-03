@@ -84,14 +84,10 @@ class _ChatPageState extends State<ChatPage>
                                     ? CrossAxisAlignment.end
                                     : CrossAxisAlignment.start,
                             children: [
-                              Container(
-                                alignment: Alignment.center,
+                              CircleProfile(
                                 width: 15,
                                 height: 15,
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: gray1,
-                                ),
+                                color: Colors.white,
                                 child: Icon(Icons.person, size: 8),
                               ),
                               Container(
