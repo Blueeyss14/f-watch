@@ -1,3 +1,5 @@
+import 'package:f_smartwatch/src/shared/components/circle_profile.dart';
+import 'package:f_smartwatch/src/shared/style/custom_color.dart';
 import 'package:flutter/material.dart';
 
 class ChatPage extends StatefulWidget {
@@ -7,7 +9,8 @@ class ChatPage extends StatefulWidget {
   State<ChatPage> createState() => _ChatPageState();
 }
 
-class _ChatPageState extends State<ChatPage> {
+class _ChatPageState extends State<ChatPage>
+    with AutomaticKeepAliveClientMixin {
   TextEditingController messageController = TextEditingController();
   List<String> messages = [];
   bool isSender = true;
@@ -31,75 +34,150 @@ class _ChatPageState extends State<ChatPage> {
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 5),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            Flexible(
-              child: Container(
-                alignment: Alignment.topLeft,
-                color: Colors.amber,
-                child: ListView.builder(
-                  itemCount: messages.length,
-                  itemBuilder: (context, index) {
-                    isSender = messages[index] == "ya";
-                    return Align(
-                      alignment:
-                          !isSender ? Alignment.topRight : Alignment.topLeft,
-                      child: Container(
-                        color: Colors.blue,
-                        child: Text(
-                          messages[index].trim(),
-                          style: TextStyle(fontSize: 8),
-                        ),
-                      ),
-                    );
-                  },
+      backgroundColor: Colors.transparent,
+      body: Column(
+        children: [
+          Container(
+            padding: const EdgeInsets.all(5),
+            alignment: Alignment.topLeft,
+            color: black1,
+            child: Row(
+              children: [
+                CircleProfile(
+                  width: 17,
+                  height: 17,
+                  child: Center(
+                    child: Icon(Icons.person, size: 8, color: black1),
+                  ),
                 ),
-              ),
+                const SizedBox(width: 5),
+                Text(
+                  "User ID",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 10,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 5),
-              child: Row(
+          ),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Column(
                 children: [
-                  Expanded(
+                  Flexible(
                     child: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 2),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5),
-                        color: Colors.grey[200],
-                      ),
-                      child: TextField(
-                        cursorHeight: 6,
-                        cursorWidth: 1,
-                        // onSubmitted: chat,
-                        controller: messageController,
-                        decoration: InputDecoration(
-                          border: InputBorder.none,
-                          focusColor: Colors.transparent,
-                          enabledBorder: InputBorder.none,
-                          focusedBorder: InputBorder.none,
-                          isDense: true,
-                          contentPadding: EdgeInsets.all(2),
-                        ),
-                        style: TextStyle(fontSize: 8),
+                      alignment: Alignment.topLeft,
+                      color: Colors.transparent,
+                      child: ListView.builder(
+                        padding: const EdgeInsets.only(top: 5),
+                        itemCount: messages.length,
+                        itemBuilder: (context, index) {
+                          isSender = messages[index] == "ya";
+                          return Column(
+                            crossAxisAlignment:
+                                !isSender
+                                    ? CrossAxisAlignment.end
+                                    : CrossAxisAlignment.start,
+                            children: [
+                              Container(
+                                alignment: Alignment.center,
+                                width: 15,
+                                height: 15,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: gray1,
+                                ),
+                                child: Icon(Icons.person, size: 8),
+                              ),
+                              Container(
+                                constraints: BoxConstraints(
+                                  maxWidth:
+                                      MediaQuery.of(context).size.width / 2,
+                                ),
+                                margin: const EdgeInsets.symmetric(
+                                  vertical: 2,
+                                  horizontal: 5,
+                                ),
+                                padding: const EdgeInsets.symmetric(
+                                  vertical: 3,
+                                  horizontal: 5,
+                                ),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(5),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: black1.withAlpha(20),
+                                      offset: Offset(1, 1),
+                                      blurRadius: 2,
+                                      spreadRadius: 0.22,
+                                    ),
+                                  ],
+                                  color: Colors.white,
+                                ),
+                                child: Text(
+                                  messages[index].trim(),
+                                  style: TextStyle(fontSize: 7),
+                                ),
+                              ),
+                            ],
+                          );
+                        },
                       ),
                     ),
                   ),
-                  const SizedBox(width: 10),
-                  GestureDetector(
-                    onTap: chat,
-                    child: Icon(Icons.send, size: 12),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 5),
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: Container(
+                            padding: EdgeInsets.symmetric(horizontal: 2),
+                            decoration: BoxDecoration(
+                              border: Border.all(width: 0.5, color: black1),
+                              borderRadius: BorderRadius.circular(5),
+                              color: Colors.transparent,
+                            ),
+                            child: TextField(
+                              cursorColor: black1,
+                              cursorHeight: 6,
+                              cursorWidth: 1,
+                              controller: messageController,
+                              decoration: InputDecoration(
+                                hintText: "Chat..",
+                                border: InputBorder.none,
+                                focusColor: Colors.transparent,
+                                enabledBorder: InputBorder.none,
+                                focusedBorder: InputBorder.none,
+                                isDense: true,
+                                contentPadding: EdgeInsets.all(2),
+                              ),
+                              style: TextStyle(fontSize: 8),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(width: 10),
+                        GestureDetector(
+                          onTap: chat,
+                          child: Icon(Icons.send, size: 12, color: black1),
+                        ),
+                        SizedBox(width: MediaQuery.of(context).size.width / 6),
+                      ],
+                    ),
                   ),
-                  SizedBox(width: MediaQuery.of(context).size.width / 6),
                 ],
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }

@@ -17,9 +17,18 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Scaffold(
-          backgroundColor: Colors.black,
-          body: PageView(scrollDirection: Axis.vertical, children: pages),
+        Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [const Color(0xFFD3E0F0), Colors.white],
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+            ),
+          ),
+          child: Scaffold(
+            backgroundColor: Colors.transparent,
+            body: PageView(scrollDirection: Axis.vertical, children: pages),
+          ),
         ),
         Align(
           alignment: Alignment.bottomRight,
