@@ -39,6 +39,7 @@ class _ChatPageState extends State<ChatPage>
       backgroundColor: Colors.transparent,
       body: Column(
         children: [
+          ///APPBAR
           Container(
             padding: const EdgeInsets.all(5),
             alignment: Alignment.topLeft,
@@ -54,10 +55,10 @@ class _ChatPageState extends State<ChatPage>
                 ),
                 const SizedBox(width: 5),
                 Text(
-                  "User ID",
+                  "User",
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 10,
+                    fontSize: 9,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
