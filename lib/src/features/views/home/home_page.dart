@@ -5,6 +5,7 @@ import 'package:f_smartwatch/src/features/models/UI/ui_model.dart';
 import 'package:f_smartwatch/src/features/views/pages/chat_page.dart';
 import 'package:f_smartwatch/src/features/views/pages/watch_menu.dart';
 import 'package:f_smartwatch/src/features/views/pages/watch_page.dart';
+import 'package:f_smartwatch/src/shared/style/custom_color.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -39,7 +40,7 @@ class _HomePageState extends State<HomePage> {
         Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [const Color(0xFFD3E0F0), Colors.white],
+              colors: [blue1, Colors.white],
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
             ),

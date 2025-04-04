@@ -1,3 +1,4 @@
+import 'package:f_smartwatch/src/shared/style/custom_color.dart';
 import 'package:flutter/material.dart';
 import 'package:one_clock/one_clock.dart';
 
@@ -11,7 +12,7 @@ class WatchPage extends StatelessWidget {
       body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
-        decoration: BoxDecoration(color: Colors.amber, shape: BoxShape.circle),
+        decoration: BoxDecoration(color: blue1, shape: BoxShape.circle),
         child: AnalogClock(
           secondHandColor: Colors.black,
           tickColor: Colors.black,
