@@ -38,6 +38,8 @@ dependencies:
   geolocator: ^13.0.4
   permission_handler: ^11.4.0
   circular_menu: ^4.0.0
+  syncfusion_flutter_calendar: ^29.1.35
+  flutter_neat_and_clean_calendar: ^0.4.16
 
 dev_dependencies:
   flutter_test:
