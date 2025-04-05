@@ -64,13 +64,15 @@ class _HomePageState extends State<HomePage> {
           BackdropFilter(
             filter: ImageFilter.blur(sigmaX: 4, sigmaY: 4),
             child: Container(
-              color: Colors.black.withAlpha(10),
+              color: blue2.withAlpha(80),
               width: double.infinity,
               height: double.infinity,
             ),
           ),
 
         CircularMenu(
+          toggleButtonColor: blue2,
+          toggleButtonIconColor: Colors.white,
           toggleButtonOnPressed: () {
             setState(() {
               clicked++;
@@ -87,6 +89,8 @@ class _HomePageState extends State<HomePage> {
           items: List.generate(
             circularMenu.length,
             (index) => CircularMenuItem(
+              iconColor: Colors.white,
+              color: blue2,
               padding: 8,
               iconSize: 10,
               margin: 5,
