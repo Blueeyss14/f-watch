@@ -1,7 +1,6 @@
 import 'package:f_smartwatch/src/features/views/components/calendar.dart';
 import 'package:f_smartwatch/src/features/views/components/temperature.dart';
 import 'package:f_smartwatch/src/features/views/components/time.dart';
-import 'package:f_smartwatch/src/features/views/pages/calendar_page.dart';
 import 'package:f_smartwatch/src/shared/style/custom_color.dart';
 import 'package:flutter/material.dart';
 
@@ -20,19 +19,7 @@ class WatchMenu extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Flexible(
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => const CalendarPage(),
-                      ),
-                    );
-                  },
-                  child: buildCalendar(),
-                ),
-              ),
-
+              Flexible(child: buildCalendar(context)),
               const SizedBox(height: 5),
               Row(
                 children: [

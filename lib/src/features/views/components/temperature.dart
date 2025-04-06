@@ -13,6 +13,7 @@ Widget buildTemperature(BuildContext context) {
   });
 
   return Container(
+    clipBehavior: Clip.antiAlias,
     alignment: Alignment.center,
     height: 30,
     width: 40,
@@ -34,9 +35,25 @@ Widget buildTemperature(BuildContext context) {
         ),
       ],
     ),
-    child: Text(
-      '${temperature.temperature}°C',
-      style: TextStyle(fontFamily: 'Digital7', fontSize: 12),
+    child: Material(
+      shadowColor: Colors.transparent,
+      surfaceTintColor: Colors.transparent,
+      elevation: 0,
+      color: Colors.transparent,
+      child: InkWell(
+        splashColor: Colors.white.withAlpha(100),
+        onTap: () {},
+        child: Container(
+          alignment: Alignment.center,
+          color: Colors.transparent,
+          width: double.infinity,
+          height: double.infinity,
+          child: Text(
+            '${temperature.temperature}°C',
+            style: TextStyle(fontFamily: 'Digital7', fontSize: 12),
+          ),
+        ),
+      ),
     ),
   );
 }

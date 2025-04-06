@@ -21,14 +21,14 @@ class _ChatPageState extends State<ChatPage>
         messages.add(messageController.text);
         messageController.clear();
       });
-    }
 
-    if (messages.last.toLowerCase() == "hai" && isSender) {
-      Future.delayed(Duration(milliseconds: 300), () {
-        setState(() {
-          messages.add("ya");
+      if (messages.last.toLowerCase().trim() == "hai" && isSender) {
+        Future.delayed(Duration(milliseconds: 300), () {
+          setState(() {
+            messages.add("ya");
+          });
         });
-      });
+      }
     }
   }
 

@@ -5,6 +5,7 @@ Widget buildTime(BuildContext context) {
   String time = TimeOfDay.now().format(context);
 
   return Container(
+    clipBehavior: Clip.antiAlias,
     alignment: Alignment.center,
     height: 30,
     decoration: BoxDecoration(
@@ -25,6 +26,25 @@ Widget buildTime(BuildContext context) {
         ),
       ],
     ),
-    child: Text(time, style: TextStyle(fontFamily: 'Digital7', fontSize: 12)),
+    child: Material(
+      shadowColor: Colors.transparent,
+      surfaceTintColor: Colors.transparent,
+      elevation: 0,
+      color: Colors.transparent,
+      child: InkWell(
+        splashColor: Colors.white.withAlpha(100),
+        onTap: () {},
+        child: Container(
+          alignment: Alignment.center,
+          width: double.infinity,
+          height: double.infinity,
+          color: Colors.transparent,
+          child: Text(
+            time,
+            style: TextStyle(fontFamily: 'Digital7', fontSize: 12),
+          ),
+        ),
+      ),
+    ),
   );
 }
