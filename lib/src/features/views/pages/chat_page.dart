@@ -43,14 +43,14 @@ class _ChatPageState extends State<ChatPage>
           Container(
             padding: const EdgeInsets.all(5),
             alignment: Alignment.topLeft,
-            color: black1,
+            color: blue2,
             child: Row(
               children: [
                 CircleProfile(
                   width: 17,
                   height: 17,
                   child: Center(
-                    child: Icon(Icons.person, size: 8, color: black1),
+                    child: Icon(Icons.person, size: 8, color: blue2),
                   ),
                 ),
                 const SizedBox(width: 5),
@@ -89,7 +89,11 @@ class _ChatPageState extends State<ChatPage>
                                 width: 15,
                                 height: 15,
                                 color: Colors.white,
-                                child: Icon(Icons.person, size: 8),
+                                child: Icon(
+                                  Icons.person,
+                                  size: 8,
+                                  color: blue2,
+                                ),
                               ),
                               Container(
                                 constraints: BoxConstraints(
@@ -135,12 +139,12 @@ class _ChatPageState extends State<ChatPage>
                           child: Container(
                             padding: EdgeInsets.symmetric(horizontal: 2),
                             decoration: BoxDecoration(
-                              border: Border.all(width: 0.5, color: black1),
+                              border: Border.all(width: 0.5, color: blue2),
                               borderRadius: BorderRadius.circular(5),
                               color: Colors.transparent,
                             ),
                             child: TextField(
-                              cursorColor: black1,
+                              cursorColor: blue2,
                               cursorHeight: 6,
                               cursorWidth: 1,
                               controller: messageController,
@@ -153,14 +157,14 @@ class _ChatPageState extends State<ChatPage>
                                 isDense: true,
                                 contentPadding: EdgeInsets.all(2),
                               ),
-                              style: TextStyle(fontSize: 8),
+                              style: TextStyle(fontSize: 8, color: black1),
                             ),
                           ),
                         ),
                         const SizedBox(width: 10),
                         GestureDetector(
                           onTap: chat,
-                          child: Icon(Icons.send, size: 12, color: black1),
+                          child: Icon(Icons.send, size: 12, color: blue2),
                         ),
                         SizedBox(width: MediaQuery.of(context).size.width / 6),
                       ],

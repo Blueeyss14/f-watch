@@ -8,7 +8,7 @@ class CircularMenuModel {
   static List<CircularMenuModel> circularMenu() {
     List<Map<String, dynamic>> datas = [
       {"icon": Icons.home},
-      {"icon": Icons.search},
+      {"icon": Icons.dashboard_customize_outlined},
       {"icon": Icons.chat},
     ];
 

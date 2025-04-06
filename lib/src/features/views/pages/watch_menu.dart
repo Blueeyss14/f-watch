@@ -1,7 +1,9 @@
+import 'package:f_smartwatch/src/features/viewmodels/weather_provider.dart';
 import 'package:f_smartwatch/src/features/views/pages/calendar_page.dart';
 import 'package:f_smartwatch/src/shared/style/custom_color.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
 
 class WatchMenu extends StatelessWidget {
   const WatchMenu({super.key});
@@ -11,6 +13,14 @@ class WatchMenu extends StatelessWidget {
     String time = TimeOfDay.now().format(context);
     DateTime now = DateTime.now();
     String formattedDate = DateFormat('EEE d MMMM', 'en_US').format(now);
+
+    final temperature = Provider.of<WeatherProvider>(context);
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (temperature.temperature == '') {
+        temperature.fetchWeather();
+      }
+    });
 
     return Scaffold(
       backgroundColor: blue1,
@@ -134,7 +144,7 @@ class WatchMenu extends StatelessWidget {
                       ],
                     ),
                     child: Text(
-                      "30 C",
+                      '${temperature.temperature}°C',
                       style: TextStyle(fontFamily: 'Digital7', fontSize: 12),
                     ),
                   ),
