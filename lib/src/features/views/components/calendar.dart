@@ -9,10 +9,10 @@ Widget buildCalendar(BuildContext context) {
   return Container(
     clipBehavior: Clip.antiAlias,
     alignment: Alignment.center,
-    height: 25,
+    height: 27,
     decoration: BoxDecoration(
       color: blue1,
-      borderRadius: BorderRadius.circular(7),
+      borderRadius: BorderRadius.circular(5),
       boxShadow: [
         BoxShadow(
           color: const Color(0xFF9DA9BB),

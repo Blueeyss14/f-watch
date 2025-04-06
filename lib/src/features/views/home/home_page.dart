@@ -74,6 +74,14 @@ class _HomePageState extends State<HomePage> {
           ),
 
         CircularMenu(
+          toggleButtonBoxShadow: [
+            BoxShadow(
+              color: blue2.withAlpha(100),
+              blurRadius: 10,
+              spreadRadius: 1,
+              offset: const Offset(0, 0),
+            ),
+          ],
           toggleButtonColor: blue2,
           toggleButtonIconColor: Colors.white,
           toggleButtonOnPressed: () {
@@ -88,10 +96,18 @@ class _HomePageState extends State<HomePage> {
           alignment: Alignment.bottomRight,
           toggleButtonSize: 10,
           toggleButtonPadding: 5,
-          toggleButtonMargin: 3,
+          toggleButtonMargin: 8,
           items: List.generate(
             circularMenu.length,
             (index) => CircularMenuItem(
+              boxShadow: [
+                BoxShadow(
+                  color: blue2.withAlpha(100),
+                  blurRadius: 10,
+                  spreadRadius: 1,
+                  offset: const Offset(0, 0),
+                ),
+              ],
               iconColor: Colors.white,
               color: blue2,
               padding: 8,

@@ -7,6 +7,7 @@ class CircleProfile extends StatelessWidget {
   final EdgeInsetsGeometry? margin;
   final Color? color;
   final Widget? child;
+  final Function()? onTap;
   const CircleProfile({
     super.key,
     this.width,
@@ -15,20 +16,24 @@ class CircleProfile extends StatelessWidget {
     this.margin,
     this.color,
     this.child,
+    this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: padding,
-      margin: margin,
-      width: width ?? 20,
-      height: height ?? 20,
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        color: color ?? Colors.white,
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: padding,
+        margin: margin,
+        width: width ?? 20,
+        height: height ?? 20,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: color ?? Colors.white,
+        ),
+        child: child,
       ),
-      child: child,
     );
   }
 }

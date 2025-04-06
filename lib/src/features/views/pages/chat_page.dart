@@ -55,7 +55,7 @@ class _ChatPageState extends State<ChatPage>
                 ),
                 const SizedBox(width: 5),
                 Text(
-                  "User",
+                  "FWatch",
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 9,

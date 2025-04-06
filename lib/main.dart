@@ -1,3 +1,4 @@
+import 'package:f_smartwatch/src/features/viewmodels/timer_provider.dart';
 import 'package:f_smartwatch/src/features/viewmodels/weather_provider.dart';
 import 'package:f_smartwatch/src/features/views/home/home_page.dart';
 import 'package:flutter/material.dart';
@@ -9,7 +10,10 @@ void main() async {
   await dotenv.load();
   runApp(
     MultiProvider(
-      providers: [ChangeNotifierProvider(create: (_) => WeatherProvider())],
+      providers: [
+        ChangeNotifierProvider(create: (_) => WeatherProvider()),
+        ChangeNotifierProvider(create: (_) => TimerProvider()),
+      ],
       child: const MyApp(),
     ),
   );
