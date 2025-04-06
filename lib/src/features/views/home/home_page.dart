@@ -18,8 +18,8 @@ class HomePage extends StatefulWidget {
 final pages = const [WatchPage(), WatchMenu(), ChatPage()];
 
 class _HomePageState extends State<HomePage> {
-  List<CircularMenuModel> circularMenu = CircularMenuModel.circularMenu();
-  int currentIndex = 0;
+  static int currentIndex = 0;
+
   PageController pageController = PageController();
 
   int clicked = 0;
@@ -35,6 +35,9 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    List<CircularMenuModel> circularMenu = CircularMenuModel.circularMenu(
+      currentIndex,
+    );
     return Stack(
       children: [
         Container(

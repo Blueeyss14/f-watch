@@ -5,9 +5,9 @@ class CircularMenuModel {
 
   CircularMenuModel(this.icon);
 
-  static List<CircularMenuModel> circularMenu() {
+  static List<CircularMenuModel> circularMenu(int index) {
     List<Map<String, dynamic>> datas = [
-      {"icon": Icons.home},
+      {"icon": index == 0 ? Icons.watch_off : Icons.watch},
       {"icon": Icons.dashboard_customize_outlined},
       {"icon": Icons.chat},
     ];
