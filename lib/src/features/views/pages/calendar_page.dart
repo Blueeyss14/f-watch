@@ -67,7 +67,7 @@ class CalendarPage extends StatelessWidget {
                     onTap: () {
                       Navigator.of(context).pop();
                     },
-                    child: Icon(Icons.arrow_back_ios_new_sharp, size: 12),
+                    child: Icon(Icons.arrow_back_ios_new_sharp, size: 15),
                   ),
                 ),
                 const SizedBox(width: 5),

@@ -1,3 +1,4 @@
+import 'package:f_smartwatch/src/features/views/pages/timer_page.dart';
 import 'package:f_smartwatch/src/shared/style/custom_color.dart';
 import 'package:flutter/material.dart';
 
@@ -33,7 +34,12 @@ Widget buildTime(BuildContext context) {
       color: Colors.transparent,
       child: InkWell(
         splashColor: Colors.white.withAlpha(100),
-        onTap: () {},
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => TimerPage()),
+          );
+        },
         child: Container(
           alignment: Alignment.center,
           width: double.infinity,
