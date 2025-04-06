@@ -47,7 +47,11 @@ Widget buildTime(BuildContext context) {
           color: Colors.transparent,
           child: Text(
             time,
-            style: TextStyle(fontFamily: 'Digital7', fontSize: 12),
+            style: TextStyle(
+              fontFamily: 'Digital7',
+              fontSize: 12,
+              color: blue3,
+            ),
           ),
         ),
       ),

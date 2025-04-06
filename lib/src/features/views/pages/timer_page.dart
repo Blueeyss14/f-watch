@@ -134,7 +134,7 @@ class _TimerPageState extends State<TimerPage>
                       color: blue2,
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black.withAlpha(80),
+                          color: Colors.black.withAlpha(100),
                           offset: const Offset(1, 1),
                           blurRadius: 3,
                           spreadRadius: 0.5,

@@ -20,11 +20,11 @@ class WatchMenu extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Flexible(child: buildCalendar(context)),
-              const SizedBox(height: 7),
+              const SizedBox(height: 5),
               Row(
                 children: [
                   Flexible(child: buildTime(context)),
-                  const SizedBox(width: 7),
+                  const SizedBox(width: 5),
                   buildTemperature(context),
                 ],
               ),

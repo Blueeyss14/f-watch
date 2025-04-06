@@ -61,14 +61,11 @@ class CalendarPage extends StatelessWidget {
           children: [
             Row(
               children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 5),
-                  child: GestureDetector(
-                    onTap: () {
-                      Navigator.of(context).pop();
-                    },
-                    child: Icon(Icons.arrow_back_ios_new_sharp, size: 15),
-                  ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: Icon(Icons.arrow_back_ios_new_sharp, size: 15),
                 ),
                 const SizedBox(width: 5),
                 Text(
@@ -77,7 +74,7 @@ class CalendarPage extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 3),
+            const SizedBox(height: 8),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [

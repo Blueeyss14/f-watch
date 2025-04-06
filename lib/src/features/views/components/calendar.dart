@@ -57,7 +57,11 @@ Widget buildCalendar(BuildContext context) {
                   alignment: Alignment.center,
                   child: Text(
                     formattedDate,
-                    style: TextStyle(fontFamily: 'Digital7', fontSize: 12),
+                    style: TextStyle(
+                      fontFamily: 'Digital7',
+                      fontSize: 12,
+                      color: blue3,
+                    ),
                   ),
                 ),
               ),
