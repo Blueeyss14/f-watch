@@ -6,6 +6,7 @@ import 'package:f_smartwatch/src/features/views/pages/chat_page.dart';
 import 'package:f_smartwatch/src/features/views/pages/watch_menu.dart';
 import 'package:f_smartwatch/src/features/views/pages/watch_page.dart';
 import 'package:f_smartwatch/src/shared/style/custom_color.dart';
+import 'package:f_smartwatch/src/shared/widget/gradient_background.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -40,14 +41,7 @@ class _HomePageState extends State<HomePage> {
     );
     return Stack(
       children: [
-        Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [blue1, Colors.white],
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-            ),
-          ),
+        GradientBackground(
           child: Scaffold(
             backgroundColor: Colors.transparent,
             body: PageView(

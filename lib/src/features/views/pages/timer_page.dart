@@ -1,6 +1,7 @@
 import 'package:f_smartwatch/src/features/viewmodels/timer_provider.dart';
 import 'package:f_smartwatch/src/shared/components/circle_profile.dart';
 import 'package:f_smartwatch/src/shared/style/custom_color.dart';
+import 'package:f_smartwatch/src/shared/widget/gradient_background.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -18,14 +19,7 @@ class _TimerPageState extends State<TimerPage>
     final timerProvider = Provider.of<TimerProvider>(context);
 
     super.build(context);
-    return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [blue1, Colors.white],
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-        ),
-      ),
+    return GradientBackground(
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: Column(
@@ -62,12 +56,8 @@ class _TimerPageState extends State<TimerPage>
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
-                              const SizedBox(width: 2),
-                              Icon(
-                                Icons.watch_later_outlined,
-                                size: 18,
-                                color: blue3,
-                              ),
+                              const SizedBox(width: 3),
+                              Icon(Icons.alarm, size: 18, color: blue3),
                             ],
                           ),
 

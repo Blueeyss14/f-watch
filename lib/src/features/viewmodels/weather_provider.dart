@@ -15,7 +15,7 @@ class WeatherProvider extends ChangeNotifier {
     var response = await http.get(Uri.parse(url));
     if (response.statusCode == 200) {
       var data = json.decode(response.body);
-      //conver to integer
+      //convert to integer
       double temp = data['current']['temp_c'];
       temperature = temp.toInt().toString();
       city = data['location']['name'];
