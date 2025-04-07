@@ -16,17 +16,24 @@ class WatchPage extends StatelessWidget {
       body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
-        decoration: BoxDecoration(color: blue1, shape: BoxShape.circle),
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [blue1, Colors.white],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
+          shape: BoxShape.circle,
+        ),
         child: CircularPercentIndicator(
           radius: MediaQuery.of(context).size.width / 2,
-          lineWidth: 6,
+          lineWidth: 8,
           percent: percent.clamp(0.0, 1.0),
           animation: true,
           animationDuration: 1000,
           circularStrokeCap: CircularStrokeCap.round,
           backgroundColor: blue2,
           linearGradient: LinearGradient(
-            colors: [Colors.blueAccent, Colors.purpleAccent],
+            colors: [blue3, Colors.white],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
