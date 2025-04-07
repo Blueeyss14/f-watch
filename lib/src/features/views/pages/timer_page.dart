@@ -38,7 +38,7 @@ class _TimerPageState extends State<TimerPage>
                 onTap: () {
                   Navigator.pop(context);
                 },
-                child: Icon(Icons.arrow_back_ios, size: 13),
+                child: Icon(Icons.arrow_back_ios, size: 13, color: blue3),
               ),
             ),
             Expanded(
@@ -58,14 +58,19 @@ class _TimerPageState extends State<TimerPage>
                                 "Timer",
                                 style: TextStyle(
                                   fontSize: 20,
+                                  color: blue3,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
                               const SizedBox(width: 2),
-                              Icon(Icons.watch_later_outlined, size: 18),
+                              Icon(
+                                Icons.watch_later_outlined,
+                                size: 18,
+                                color: blue3,
+                              ),
                             ],
                           ),
-                          const SizedBox(height: 5),
+
                           Text(
                             "Scroll Timer",
                             style: TextStyle(fontSize: 12, color: blue2),
@@ -80,7 +85,7 @@ class _TimerPageState extends State<TimerPage>
                         children: [
                           Text(
                             "${(timerProvider.remainingSeconds ~/ 60).toString().padLeft(2, '0')}:${(timerProvider.remainingSeconds % 60).toString().padLeft(2, '0')}",
-                            style: TextStyle(fontSize: 20),
+                            style: TextStyle(fontSize: 20, color: blue3),
                           ),
                           const SizedBox(height: 2),
                           Row(
@@ -128,19 +133,21 @@ class _TimerPageState extends State<TimerPage>
                     ),
                   Container(
                     alignment: Alignment.center,
-                    margin: const EdgeInsets.all(10),
+                    margin: const EdgeInsets.symmetric(horizontal: 5),
                     clipBehavior: Clip.antiAlias,
                     decoration: BoxDecoration(
                       color: blue2,
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black.withAlpha(100),
-                          offset: const Offset(1, 1),
+                          color: blue3.withAlpha(100),
+                          offset: const Offset(0, 0),
                           blurRadius: 3,
-                          spreadRadius: 0.5,
+                          spreadRadius: 0.2,
                         ),
                       ],
-                      borderRadius: BorderRadius.circular(7),
+                      borderRadius: BorderRadius.vertical(
+                        top: Radius.circular(10),
+                      ),
                     ),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.end,

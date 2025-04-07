@@ -1,4 +1,5 @@
 import 'package:f_smartwatch/src/features/viewmodels/weather_provider.dart';
+import 'package:f_smartwatch/src/features/views/pages/temperature_page.dart';
 import 'package:f_smartwatch/src/shared/style/custom_color.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -42,7 +43,12 @@ Widget buildTemperature(BuildContext context) {
       color: Colors.transparent,
       child: InkWell(
         splashColor: Colors.white.withAlpha(100),
-        onTap: () {},
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => TemperaturePage()),
+          );
+        },
         child: Container(
           alignment: Alignment.center,
           color: Colors.transparent,
